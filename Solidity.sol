@@ -37,8 +37,9 @@ contract MyToken {
 
     // burn function
     function burn(address _address, uint _value) public{
+        if (bal[_address] >= _value) {
         TotalSupply -= _value;
         bal[_address] -= _value;
+        }
     }
-
 }
